@@ -1,0 +1,39 @@
+.app-icon {
+  min-height: 9rem !important;
+  height: 9rem !important;
+  background-color: color($colors, primary);
+  padding-bottom: 4px;
+
+  img {
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
+
+.app-menu {
+  ion-content {
+    background-color: color($colors, light) !important;
+  }
+
+  ion-list {
+    button {
+      background-color: color($colors, light) !important;
+      ion-icon {
+        min-width: 20px;
+        margin-right: 8px;
+      }
+    }
+  }
+
+  ion-label {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+}
+
+.app-toast {
+  > div {
+    background-color: color($colors, dark) !important;
+
+  }
+}

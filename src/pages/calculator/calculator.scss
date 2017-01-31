@@ -1,0 +1,65 @@
+.page-calculator {
+
+  .calculator-pad {
+    padding-top: 6px;
+    padding-bottom: 8px;
+  }
+  div {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .total-calc-divider {
+    border-top: 3px double color($colors, primary);
+  }
+
+  ion-card {
+    /*
+    border-style: solid;
+    border-width: 2px;
+    border-color: color($colors, primary);
+    */
+  }
+
+  .total-bar {
+    text-align: center;
+    margin-top: 6px;
+    margin-bottom: 10px;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    //margin-left: 10px;
+    //margin-right: 10px;
+    width: 100%;
+    font-size: 2rem;
+    background-color: color($colors, primary);
+    color: color($colors, light);
+  }
+
+  .calculator-step {
+    margin-left: 3px;
+    margin-right: 3px;
+    ion-item {
+      background-color: color($colors, light);
+    }
+    .calculator-answer {
+      background-color: color($colors, secondary);
+
+    }
+    .calculation-math {
+      text-align: center;
+      color: color($colors, dark) !important;
+      font-height: 16px;
+    }
+    div {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+  }
+  ion-label {
+    margin-bottom: 0px !important;
+    margin-top: 0px !important;
+  }
+  ion-icon {
+    font-size: 24px;
+  }
+
+}

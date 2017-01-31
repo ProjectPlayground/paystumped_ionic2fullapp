@@ -1,0 +1,23 @@
+<ion-card (click)="click()" class="page-message-card" [@clickEffectState]="toggle">
+  <ion-card-header>
+    <ion-grid>
+      <ion-row class="mail-heading">
+        <ion-col width-10 no-padding no-margin padding-left>
+          <div *ngIf="readCount > 0">
+            <ion-icon name="mail"></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col width-90 no-padding no-margin>
+          <div class="message-date" text-right>{{date | amDateFormat:'L'}}</div>
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col width-100 class="subject"><strong>{{title}}</strong></ion-col>
+      </ion-row>
+      <hr>
+    </ion-grid>
+
+  </ion-card-header>
+  <ion-card-content *ngIf="expanded" [innerHTML]="content">
+  </ion-card-content>
+</ion-card>

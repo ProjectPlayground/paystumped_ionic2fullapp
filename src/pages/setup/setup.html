@@ -1,0 +1,51 @@
+<ion-header>
+
+  <ion-navbar hideBackButton>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'SETUP' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content padding class="setup-page">
+
+  <div [hidden]="complete">
+    <ion-item-divider>Offline Content / Datos</ion-item-divider>
+    <ion-item class="setup-inset" no-lines>{{'YOUR-BUILD-MSG' | translate}} {{currentBuild}}</ion-item>
+    <button ion-button full *ngIf="hasNewerSoftware" (click)="updateLocalData()">{{'UPDATE-LOCAL-DATA' | translate}}
+    </button>
+    <ion-item class="setup-inset" *ngIf="hasNewerSoftware===false" no-lines>
+      {{'UP-TO-DATE-MSG' | translate}}
+    </ion-item>
+
+    <ion-item-divider>Select Language / Idioma</ion-item-divider>
+    <ion-list radio-group [(ngModel)]="language">
+      <ion-item no-lines>
+        <ion-label>English</ion-label>
+        <ion-radio checked="true" value="en"></ion-radio>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label>Español</ion-label>
+        <ion-radio value="es"></ion-radio>
+      </ion-item>
+      <ion-item no-lines>
+        <ion-label>Mixteco</ion-label>
+        <ion-radio value="aa"></ion-radio>
+      </ion-item>
+    </ion-list>
+    <button ion-button full (click)="completeSetup()">{{'COMPLETE-SETUP' | translate}}</button>
+  </div>
+
+  <div *ngIf="complete">
+    <ion-grid>
+      <ion-row>
+        <ion-col width-20>
+          <ion-icon name="checkmark-circle" color="secondary"></ion-icon>
+        </ion-col>
+        <ion-col width-80 style="font-size: 32px;" padding>{{'SUCCESS' | translate}}</ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+</ion-content>

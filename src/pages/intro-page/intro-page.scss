@@ -1,0 +1,32 @@
+page-intro-page {
+
+  .intro-textarea {
+    padding-left: 30px;
+    padding-right: 30px;
+    h1 {
+      font-family: 'Montserrat-Regular';
+      color: color($colors, dark);
+      padding-top: 35px;
+      padding-bottom: 35px;
+    }
+    h2 {
+      font-family: 'Montserrat-Regular';
+      color: color($colors, dark);
+      font-size: 1.9rem;
+    }
+    p {
+      font-family: 'Montserrat-Regular';
+      color: color($colors, dark);
+      font-size: 1.5rem;
+      padding-top: 5px;
+      padding-bottom: 5px;
+      //padding-left: 6px;
+      //padding-right: 16px;
+      //color: white;
+    }
+    button {
+      font-family: 'Montserrat-Regular';
+      color: color($colors, dark);
+    }
+  }
+}

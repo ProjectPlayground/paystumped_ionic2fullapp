@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'MESSAGES' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding class="page-pushed-messages">
+  <div *ngFor="let m of messages">
+    <page-message-card tappable content="{{m.body}}" date="{{m.date}}" title="{{m.title}}" readCount="{{m.readCount}}">
+    </page-message-card>
+  </div>
+
+  <div *ngIf="this.messages.length == 0">
+    You have no messages
+  </div>
+
+  <div *ngIf="showThankyou" class="message-thankyou">
+    <p padding>{{'MESSAGE-THANKYOU' | translate}}</p>
+  </div>
+
+  <ion-fab right bottom>
+    <button ion-fab mini (click)="sendMessage()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+
+</ion-content>

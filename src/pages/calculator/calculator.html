@@ -1,0 +1,219 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'CALCULATOR' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="page-calculator">
+
+
+  <!--
+  <ion-item no-lines>
+    <ion-grid>
+      <ion-row>
+        <div text-right>
+          {{total}}h {{'AT' | translate}} ${{minWageMostSeen}} = TOTAL: ${{earnings}}
+        </div>
+      </ion-row>
+    </ion-grid>
+  </ion-item>
+-->
+  <div class="calculator-pad">
+    {{'CALCULATOR-DESC' | translate}}
+  </div>
+
+  <div class="calculator-step">
+    <ion-item no-lines text-wrap>{{'CALCULATOR-1-TITLE' | translate}}</ion-item>
+    <div text-wrap class="calculator-pad">
+      {{'CALCULATOR-1' | translate}}
+    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col width-50 text-center>
+          <button ion-button [style.backgroundColor]="hasClickedQ1Yes ? '#2ea959' : '#00a6e2'"
+                  (click)="answerQ1(true);hasClickedQ1Yes=true;">
+            {{'YES' | translate}}
+          </button>
+        </ion-col>
+        <ion-col width-50 text-center>
+          <button ion-button [style.backgroundColor]="hasClickedQ1No ? '#2ea959' : '#00a6e2'"
+                  (click)="answerQ1(false);hasClickedQ1No=true;">
+            {{'NO' | translate}}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-item *ngIf="showQ1_1" no-lines>{{'CALCULATOR-1-SUB1-TITLE' | translate}}</ion-item>
+    <div *ngIf="showQ1_1">{{'CALCULATOR-1-SUB1' | translate}}</div>
+    <ion-grid *ngIf="showQ1_1">
+      <ion-row>
+        <ion-col width-50 text-center>
+          <button ion-button [style.backgroundColor]="hasClickedQ1aYes ? '#2ea959' : '#00a6e2'"
+                  (click)="answerQ1_a(true);hasClickedQ1aYes=true;">
+            {{'YES' | translate}}
+          </button>
+        </ion-col>
+        <ion-col width-50 text-center>
+          <button ion-button [style.backgroundColor]="hasClickedQ1aNo ? '#2ea959' : '#00a6e2'"
+                  (click)="answerQ1_a(false);hasClickedQ1aNo=true;">
+            {{'NO' | translate}}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+
+
+  <div class="calculator-step" *ngIf="showQ2">
+    <ion-item no-lines text-wrap>{{'CALCULATOR-2-TITLE' | translate}}</ion-item>
+    <div text-wrap class="calculator-pad">{{'CALCULATOR-2' | translate}}</div>
+    <ion-grid>
+      <ion-row>
+        <ion-col width-50 text-center>
+          <button ion-button [style.backgroundColor]="hasClickedQ2Yes ? '#2ea959' : '#00a6e2'"
+                  (click)="answerQ2(true);hasClickedQ2Yes=true;">
+            {{'YES' | translate}}
+          </button>
+        </ion-col>
+        <ion-col width-50 text-center>
+          <button ion-button [style.backgroundColor]="hasClickedQ2No ? '#2ea959' : '#00a6e2'"
+                  (click)="answerQ2(false);hasClickedQ2No=true;">
+            {{'NO' | translate}}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+  </div>
+
+
+  <div class="calculator-step" *ngIf="showSimpleCalc">
+
+    <ion-item class="calculator-step" no-lines text-wrap>{{'CALCULATOR-ENTER-EMPLOYER-INFO' | translate}}</ion-item>
+    <ion-card>
+      <form (ngSubmit)="hoursEntered()">
+        <ion-item no-lines no-margin>
+          <ion-label color="primary">{{'REGION-TRANSLATION' | translate}}</ion-label>
+          <ion-select name="formCounty" [(ngModel)]="nextCounty" cancelText="{{'CANCEL' | translate}}"
+                      okText="{{'OK' | translate}}" (ngModelChange)="countyChange(hoursInput)">
+            <ion-option *ngFor="let county of countyNames" [value]="county">{{county}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item no-lines no-margin>
+          <ion-label color="primary">{{ 'NUMBER-OF-HOURS' | translate }}</ion-label>
+          <ion-input #hoursInput type="number" name="formHour" [(ngModel)]="nextHours" required></ion-input>
+        </ion-item>
+
+        <div style="width:100%;" text-center>
+          <button ion-button icon-only color="secondary" type="submit">
+            <ion-icon name="arrow-down"></ion-icon>
+          </button>
+        </div>
+      </form>
+    </ion-card>
+
+    <div style="width:100%;padding-left:0px;padding-right: 0px;" text-center no-padding>
+      <div class="total-bar" *ngIf="showSummary">
+        Your Total: ${{totalCashEach}}
+      </div>
+    </div>
+
+
+  </div>
+
+  <div class="calculator-step" *ngIf="hasClickedQ2No">
+    <ion-item class="calculator-step" no-lines text-wrap>{{'CALCULATOR-ENTER-WORK-PERIOD-WAGE' | translate}}</ion-item>
+
+    <ion-card>
+      <form (ngSubmit)="addEntry()">
+        <ion-item no-lines no-margin>
+          <ion-label color="primary">{{'REGION-TRANSLATION' | translate}}</ion-label>
+          <ion-select name="formCounty" [(ngModel)]="nextCounty" cancelText="{{'CANCEL' | translate}}"
+                      okText="{{'OK' | translate}}" (ngModelChange)="countyChange(hoursInput)">
+            <ion-option *ngFor="let county of countyNames" [value]="county">{{county}}</ion-option>
+          </ion-select>
+        </ion-item>
+        <ion-item no-lines no-margin>
+          <ion-label color="primary">{{ 'NUMBER-OF-HOURS' | translate }}</ion-label>
+          <ion-input #hoursInput type="number" name="formHour" [(ngModel)]="nextHours" required></ion-input>
+        </ion-item>
+        <ion-item no-border no-margin no-padding>
+
+          <ion-grid>
+            <ion-row>
+              <ion-col width-80></ion-col>
+              <ion-col width-20>
+                <button ion-button icon-only right color="secondary" type="submit">
+                  <ion-icon name="add"></ion-icon>
+                </button>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-item>
+      </form>
+    </ion-card>
+
+    <ion-list>
+      <ion-item *ngFor="let item of items" (click)="removeItem(item)" no-padding no-margin text-wrap>
+        <ion-grid no-padding>
+          <ion-row>
+            <ion-col width-60>{{item.county}} (${{item.rate}})</ion-col>
+            <ion-col width-30>
+              {{item.hours}} Hour(s)
+            </ion-col>
+            <ion-col width-10>
+              <ion-icon name="close" color="danger"></ion-icon>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+      </ion-item>
+    </ion-list>
+
+
+    <div style="width:100%;padding-left:0px;padding-right: 0px;" text-center no-padding>
+      <div class="total-bar" *ngIf="showSummary">
+        Your Total: ${{totalCashEach}} <span color="secondary"
+                                             *ngIf="totalCashHighest"> -or- ${{totalCashHighest}}</span>
+      </div>
+    </div>
+
+    <div style="width:100%;" text-center>
+      <button ion-button icon-only color="secondary" style="padding-left: 8px; padding-right: 8px;"
+              (click)="hoursEntered()">
+        {{ 'CALCULATOR-DONE-INSERTING-HOURS' | translate }}
+      </button>
+    </div>
+
+  </div>
+
+  <div class="calculator-step" *ngIf="showSummary">
+    <ion-item class="calculator-answer" no-lines text-wrap>{{'CALCULATOR-SUMMARY-TITLE' | translate}}</ion-item>
+    <div>
+      {{answerText}}
+    </div>
+    <br>
+    <div class="calculation-math">
+      <b>{{'CUSTOM-CALC' | translate}}:</b><br>
+      {{calculationMath}}
+    </div>
+    <br>
+    <div>
+      {{'CALCULATOR-3' | translate}}
+    </div>
+    <br>
+    <div>
+      {{'CALCULATOR-LEGAL-DISCLAIMER' | translate }}
+    </div>
+    <div>
+      {{'CALCULATOR-LEGAL-DISCLAIMER2' | translate }}
+    </div>
+  </div>
+
+</ion-content>

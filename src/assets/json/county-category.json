@@ -1,0 +1,146 @@
+[
+  {
+    "county": "Baker",
+    "category": "NON_URBAN"
+  },
+  {
+    "county": "Benton",
+    "category": "STANDARD"
+  },
+  {
+    "county": "Clackamas",
+    "category": "STANDARD"
+  },
+  {
+    "county": "Clatsop",
+    "category": "NON_URBAN"
+  },
+  {
+    "county": "Columbia",
+    "category": "STANDARD"
+  },
+  {
+    "county": "Coos",
+    "category": "NON_URBAN"
+  },
+  {
+    "county": "Crook",
+    "category": "NON_URBAN"
+  },
+  {
+    "county": "Curry",
+    "category": "NON_URBAN"
+  },
+  {
+    "county": "Deschutes",
+    "category": "STANDARD"
+  },
+  {
+    "county": "Douglas",
+    "category": "NON_URBAN"
+  },
+  {
+    "county": "Gilliam",
+    "category": "NON_URBAN"
+  },
+  {
+    "county": "Grant",
+    "category": "NON_URBAN"
+  },
+  {
+    "county": "Harney",
+    "category": "NON_URBAN"
+  },
+  {
+    "county": "HoodRiver",
+    "category": "STANDARD"
+  },
+  {
+    "county": "Jackson",
+    "category": "STANDARD"
+  },
+  {
+    "county": "Jefferson",
+    "category": "NON_URBAN"
+  },
+  {
+    "county": "Josephine",
+    "category": "STANDARD"
+  },
+  {
+    "county": "Klamath",
+    "category": "NON_URBAN"
+  },
+  {
+    "county": "Lane",
+    "category": "STANDARD"
+  },
+  {
+    "county": "Lake",
+    "category": "NON_URBAN"
+  },
+  {
+    "county": "Lincoln",
+    "category": "STANDARD"
+  },
+  {
+    "county": "Linn",
+    "category": "STANDARD"
+  },
+  {
+    "county": "Malheur",
+    "category": "NON_URBAN"
+  },
+  {
+    "county": "Marion",
+    "category": "STANDARD"
+  },
+  {
+    "county": "Morrow",
+    "category": "NON_URBAN"
+  },
+  {
+    "county": "Multnomah",
+    "category": "STANDARD"
+  },
+  {
+    "county": "Sherman",
+    "category": "NON_URBAN"
+  },
+  {
+    "county": "Polk",
+    "category": "STANDARD"
+  },
+  {
+    "county": "Tillamook",
+    "category": "STANDARD"
+  },
+  {
+    "county": "Umatilla",
+    "category": "NON_URBAN"
+  },
+  {
+    "county": "Union",
+    "category": "NON_URBAN"
+  },
+  {
+    "county": "Wallowa",
+    "category": "NON_URBAN"
+  },
+  {
+    "county": "Wasco",
+    "category": "STANDARD"
+  },
+  {
+    "county": "Washington",
+    "category": "STANDARD"
+  },
+  {
+    "county": "Wheeler",
+    "category": "NON_URBAN"
+  },
+  {
+    "county": "Yamhill",
+    "category": "STANDARD"
+  }
+]

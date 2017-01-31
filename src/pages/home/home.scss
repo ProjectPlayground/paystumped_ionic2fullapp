@@ -1,0 +1,60 @@
+.home-header {
+  .app-title {
+    text-align: center;
+    font-size: 2.0rem;
+
+  }
+  ion-icon {
+    font-size: 2.2rem;
+  }
+
+}
+
+.home-page {
+  .pull-me-container {
+
+    margin-top: -4px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+    .pull-me {
+      width: 48px;
+      text-align: center;
+      color: color($colors, secondary);
+
+    }
+    .pull-me-tag {
+      border-left: 24px solid transparent;
+      border-right: 24px solid transparent;
+      border-top: 20px solid color($colors, secondary);
+    }
+
+  }
+
+  .min-wage {
+    font-size: 28px;
+    color: color($colors, primary);
+    text-align: center;
+  }
+
+  ion-select {
+    .select-text {
+      min-width: 60vw;
+    }
+  }
+
+  ion-card-header {
+    font-weight: 600 !important;
+  }
+  ion-card-content {
+    font-size: 1.5rem !important;
+  }
+}
+
+
+.home-wage-table {
+  text-align: center;
+  width: 98%;
+}

@@ -1,0 +1,55 @@
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'NOTES' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content class="page-notes" no-padding>
+  <!--
+  <div class="note-container">
+    <ion-textarea rows="24" placeholder="Click here to add a note!" [(ngModel)]="notes"></ion-textarea>
+  </div>
+  -->
+
+  <div style="height:20px;"></div>
+
+  <ion-list *ngFor="let note of notes" no-margin>
+    <ion-item-sliding #item no-margin>
+      <ion-item no-padding no-margin (click)="view(note)">
+        <ion-grid>
+          <ion-row class="note-item">
+            <ion-col width-33 no-padding no-margin>
+              {{note.date | amDateFormat:'L'}}
+            </ion-col>
+            <ion-col width-67 class="note-title" no-padding no-margin>
+              {{note.text}}
+            </ion-col>
+            <!--
+            <ion-col style="padding-right: 4px;" width-10 no-padding no-margin text-right>
+              <ion-icon name="arrow-forward"></ion-icon>
+            </ion-col>
+            -->
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+      <ion-item-options side="right">
+        <!--
+        <button ion-button (click)="view(note)">{{'VIEW' | translate}}</button>
+
+        -->
+        <button ion-button color="danger" (click)="delete(note)">{{'DELETE' | translate}}</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab right bottom>
+    <button ion-fab mini (click)="add()">
+      <ion-icon name="add"></ion-icon>
+    </button>
+  </ion-fab>
+</ion-content>

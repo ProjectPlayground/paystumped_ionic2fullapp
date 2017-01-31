@@ -1,0 +1,17 @@
+page-notes {
+
+  .note-title {
+    padding-left: 5px;
+  }
+  .item-inner {
+    padding-right: 0px !important;
+  }
+
+  .note-item {
+
+    ion-col {
+      white-space: nowrap;
+      overflow: hidden;
+    }
+  }
+}

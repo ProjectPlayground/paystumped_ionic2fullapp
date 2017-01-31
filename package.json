@@ -1,0 +1,66 @@
+{
+  "name": "yourapp",
+  "author": "Your Name",
+  "homepage": "yourapp.com",
+  "private": true,
+  "scripts": {
+    "clean": "ionic-app-scripts clean",
+    "build": "ionic-app-scripts build",
+    "ionic:build": "ionic-app-scripts build --prod",
+    "ionic:serve": "ionic-app-scripts serve",
+    "postinstall": "node ./post-install.js"
+  },
+  "dependencies": {
+    "@angular/common": "2.2.1",
+    "@angular/compiler": "2.2.1",
+    "@angular/compiler-cli": "2.2.1",
+    "@angular/core": "2.2.1",
+    "@angular/forms": "2.2.1",
+    "@angular/http": "2.2.1",
+    "@angular/platform-browser": "2.2.1",
+    "@angular/platform-browser-dynamic": "2.2.1",
+    "@angular/platform-server": "2.2.1",
+    "@ionic/storage": "1.1.7",
+    "angular2-google-maps": "^0.17.0",
+    "angular2-moment": "^1.0.0-beta.rc.1",
+    "angularfire2": "^2.0.0-beta.6",
+    "firebase": "^3.6.0",
+    "font-awesome": "*",
+    "ionic-angular": "2.0.0",
+    "ionic-native": "2.4.1",
+    "ionicons": "3.0.0",
+    "lodash": "^4.16.4",
+    "moment": "^2.17.0",
+    "ng2-translate": "5.0.0",
+    "rxjs": "5.0.0-beta.12",
+    "zone.js": "0.6.26",
+    "sw-toolbox": "3.4.0"
+  },
+  "devDependencies": {
+    "@ionic/app-scripts": "1.0.0",
+    "@types/request": "0.0.37",
+    "colors": "*",
+    "fs-extra": "*",
+    "typescript": "2.0.9"
+  },
+  "cordovaPlugins": [
+    "cordova-plugin-device",
+    "cordova-plugin-geolocation",
+    "cordova-plugin-whitelist",
+    "cordova-plugin-splashscreen",
+    "cordova-plugin-statusbar",
+    "cordova-plugin-media",
+    "cordova-plugin-network-information",
+    "ionic-plugin-keyboard",
+    "com-sarriaroman-photoviewer",
+    "cordova-plugin-ios-non-exempt-encryption"
+  ],
+  "cordovaPlatforms": [
+    "ios",
+    "android"
+  ],
+  "config": {
+    "ionic_copy": "./copy-from.js"
+  },
+  "description": "Your description"
+}

@@ -1,0 +1,40 @@
+<ion-menu [content]="content" class="app-menu">
+  <ion-content>
+    <ion-list>
+      <div class="app-icon" text-center no-padding>
+        <img src=" http://placehold.it/3125x1042"/>
+      </div>
+      <button menuClose ion-item (click)="openPage(pages[0])">
+        <ion-icon name="logo-usd"></ion-icon>
+        {{'OREGON-WAGE-INFO' | translate}}
+      </button>
+      <button menuClose ion-item (click)="openPage(pages[1])">
+        <ion-icon name="calculator"></ion-icon>
+        {{'CALCULATOR' | translate}}
+      </button>
+      <button menuClose ion-item (click)="openPage(pages[2])">
+        <ion-badge [hidden]="unReadMessages == 0" item-right>{{unReadMessages}}</ion-badge>
+        <ion-icon name="mail"></ion-icon>
+        {{'MESSAGES' | translate}}
+      </button>
+      <button menuClose ion-item (click)="openPage(pages[3])">
+        <ion-icon name="map"></ion-icon>
+        {{'MAP-EXPLORER' | translate}}
+      </button>
+      <button menuClose ion-item (click)="openPage(pages[4])">
+        <ion-icon name="ios-create"></ion-icon>
+        {{'NOTES' | translate}}
+      </button>
+      <button menuClose ion-item (click)="openPage(pages[5])">
+        <ion-icon name="settings"></ion-icon>
+        {{'SETUP' | translate}}
+      </button>
+      <button menuClose ion-item (click)="openPage(pages[6])">
+        <ion-icon name="help"></ion-icon>
+        {{'ABOUT' | translate}}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

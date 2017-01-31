@@ -1,0 +1,18 @@
+<ion-header>
+
+  <ion-navbar>
+
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{'MAP-EXPLORER' | translate}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <sebm-google-map #map [latitude]="lat" [longitude]="lng" (hidden)="!mapLoaded">
+    <sebm-google-map-marker [latitude]="lat" [longitude]="lng"></sebm-google-map-marker>
+    <page-map-content></page-map-content>
+  </sebm-google-map>
+</ion-content>

@@ -1,0 +1,87 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/v2/theming/
+@import "ionic.globals";
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/v2/theming/overriding-ionic-variables/
+
+$text-color: #000;
+$background-color: #fff;
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary: #2ec0f9,
+  secondary: #ffe05c,
+  tertiary: #fb5012,
+  danger: #fb5012,
+  light: #f9f9f9,
+  dark: #283044,
+  favorite: #2ec0f9
+);
+
+// App wide font change
+
+/*
+
+These are the fonts I was using and are not included as part of this repo.
+
+@font-face {
+  font-family: 'Avenir-Book';
+  src: url('../assets/fonts/AvenirLTStd-Book.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'Circular-Book';
+  src: url('../assets/fonts/CircularStd-Book.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'OpenSans-Regular';
+  src: url('../assets/fonts/OpenSans-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Montserrat-Regular';
+  src: url('../assets/fonts/Montserrat-Regular.ttf') format('truetype');
+}
+
+// override ionic default.
+$font-family-base: 'OpenSans-Regular';
+
+*/
+
+// The path for our ionicons font files, relative to the built CSS in app/css
+$ionicons-font-path: '../assets/fonts';
+
+// background for the title bar.
+$toolbar-background: color($colors, light);
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/v2/ionicons/
+
+$ionicons-font-path: "../assets/fonts";
+@import "ionicons";
+
+@import "font-awesome";

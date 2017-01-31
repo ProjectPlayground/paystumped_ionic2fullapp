@@ -1,0 +1,82 @@
+<ion-header class="home-header">
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      {{'INFO' | translate}}
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content class="home-page" no-padding>
+  <div *ngIf="!hidePullTab" class="pull-me-container" center text-center>
+    <div class="pull-me">
+      <div class="pull-me-tag">
+      </div>
+      <div>
+        {{'PULL-ME' | translate }}
+      </div>
+
+    </div>
+  </div>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <div [hidden]="!hasInit">
+
+    <ion-item>
+      <ion-label>{{'COUNTY-TRANSLATION' | translate}}</ion-label>
+      <ion-select [(ngModel)]="myCounty" (ngModelChange)="countyChange()" cancelText="{{'CANCEL' | translate}}"
+                  okText="{{'OK' | translate}}" placeholder="&#xf0ab; {{'SELECT' | translate}}"
+                  style="font-family:Arial, FontAwesome">
+        <ion-option *ngFor="let county of countyNames" [value]="county">{{county}}</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-card tappable [style.background-color]="(myCounty)?('#efefef'):('#e6e6e6')" (click)="doRefresh(null)">
+      <ion-card-header>
+        {{'MIN-WAGE-TRANSLATION' | translate}}
+      </ion-card-header>
+      <ion-card-content>
+        <ion-grid *ngIf="myCounty">
+          <ion-row text-center>
+            <ion-col>
+              <div class="min-wage">${{myWage}}</div>
+            </ion-col>
+          </ion-row>
+          <ion-row text-center>
+            <ion-col>
+              {{myWageSource}}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+
+    <button [hidden]="seeMore" ion-button full (click)="seeMore=true;populateCards()">{{'CALL-TO-READ' | translate}}
+    </button>
+
+    <div *ngIf="seeMore">
+      <div *ngFor="let card of cards">
+        <page-info-card tappable audio="{{card.audio}}" content="{{card.content}}" img="{{card.img}}"
+                        showContent="{{card.showContent}}" title=" {{card.title}}">
+
+        </page-info-card>
+      </div>
+      <div *ngIf="!manualSelect">
+        <ion-card style="background-color:#e6e6e6;">
+          <ion-card-header>
+            {{'YOUR-GPS-LOCATION' | translate}}
+          </ion-card-header>
+          <ion-card-content>
+            {{myLat}},{{myLong}}
+          </ion-card-content>
+        </ion-card>
+      </div>
+    </div>
+
+  </div>
+</ion-content>
